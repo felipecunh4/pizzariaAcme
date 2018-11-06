@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Pizzaria</b>Acme',
+    'logo' => '<b>Pizzaria</b>Tech',
 
-    'logo_mini' => '<b>A</b><cme></cme>',
+    'logo_mini' => '<b>Pizz</b><cme></cme>',
 
     /*
     |--------------------------------------------------------------------------
@@ -117,7 +117,7 @@ return [
         [
             'text'        => 'Pages',
             'url'         => 'admin/pages',
-            'icon'        => 'file',
+            'icon'        => 'shopping-cart',
             'label'       => 4,
             'label_color' => 'success',
         ],*/
@@ -132,10 +132,44 @@ return [
             'submenu' => [
               [
                   'text' => 'Refeições',
+                  'url'  => '#',
                   'icon' => 'spoon',
               ],
+                [
+                    'text' => 'Bebidas',
+                    'url'  => '#',
+                    'icon' => 'beer',
+                ],
+                [
+                    'text' => 'Cardápio',
+                    'url'  => '#',
+                    'icon' => 'book',
+                ],
             ],
         ],
+        [
+            'text'    => 'Pedidos',
+            'url'     => '#',
+            'icon'    => 'clipboard',
+            'label'       => 0,
+            'label_color' => 'success',
+        ],
+        [
+            'text'    => 'Reservas',
+            'url'     => '#',
+            'icon'    => 'birthday-cake',
+        ],
+        [
+            'text'    => 'Configurações',
+            'url'     => '#',
+            'icon'    => 'cogs',
+        ],
+        [
+        'text'    => 'Sair',
+        'url'     => '#',
+        'icon'    => 'power-off',
+         ],
+
         /*'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
