@@ -6,8 +6,8 @@
         <div class="display-table">
             <div class="verticle-middle">
                 <div class="container text-center">
-                    <h1>RestoRestaurant</h1>
-                    <p class="lead">Awesome restaurant template</p>
+                    <h1>Ricardo Restaurante</h1>
+                    <p class="lead">O boteco ideal para sua noite</p>
                 </div>
             </div>
         </div>

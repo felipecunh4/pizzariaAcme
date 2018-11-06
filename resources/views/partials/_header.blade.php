@@ -41,7 +41,7 @@
                 <button type="button" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right collapsed" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="false" aria-controls="navbarNavDropdown">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="{{route('index')}}">
 
                     <img src="{{asset('img/logo-light.png')}}" alt="logo" class="logo-default">
                     <img src="{{asset('img/logo-dark.png')}}" alt="logo" class="logo-scroll">
