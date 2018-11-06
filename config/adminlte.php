@@ -122,6 +122,11 @@ return [
             'label_color' => 'success',
         ],*/
         [
+            'text'  => 'Dashboard',
+            'icon'  => 'dashboard',
+            'url'   => '/home'
+        ],
+        [
             'text'    => 'Cadastrar',
             'icon'    => 'plus-square',
             'submenu' => [
