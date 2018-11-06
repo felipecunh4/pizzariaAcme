@@ -135,17 +135,23 @@ return [
                   'url'  => '#',
                   'icon' => 'spoon',
               ],
-                [
-                    'text' => 'Bebidas',
-                    'url'  => '#',
-                    'icon' => 'beer',
-                ],
-                [
-                    'text' => 'Cardápio',
-                    'url'  => '#',
-                    'icon' => 'book',
-                ],
+
+              [
+                  'text' => 'Sobremesas',
+                  'url'  => '#',
+                  'icon' => 'birthday-cake',
+              ],
+              [
+                  'text' => 'Bebidas',
+                  'url'  => '/cadbebidas',
+                  'icon' => 'coffee',
+              ],
             ],
+        ],
+        [
+            'text'    => 'Cardápio',
+            'url'     => '#',
+            'icon'    => 'book',
         ],
         [
             'text'    => 'Pedidos',
@@ -157,7 +163,7 @@ return [
         [
             'text'    => 'Reservas',
             'url'     => '#',
-            'icon'    => 'birthday-cake',
+            'icon'    => 'calendar',
         ],
         [
             'text'    => 'Configurações',
