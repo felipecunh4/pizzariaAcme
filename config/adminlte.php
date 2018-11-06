@@ -132,7 +132,7 @@ return [
             'submenu' => [
               [
                   'text' => 'Refeições',
-                  'url'  => '#',
+                  'url'  => '/cadastrar/refeicao',
                   'icon' => 'spoon',
               ],
 
@@ -143,7 +143,7 @@ return [
               ],
               [
                   'text' => 'Bebidas',
-                  'url'  => '/cadbebidas',
+                  'url'  => '/cadastrar/bebidas',
                   'icon' => 'coffee',
               ],
             ],

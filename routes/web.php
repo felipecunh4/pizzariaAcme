@@ -16,4 +16,5 @@ Route::get('/cardapio', 'CardapioController@indexCardapio')->name('index.cardapi
 Route::get('/produtos', 'CardapioController@indexProdutos')->name('index.produtos');
 Route::get('/reservas', 'CardapioController@indexReserva')->name('index.reserva');
 
-Route::get('/cadbebidas', 'HomeController@cadbebidas')->name('cadbebidas');
+Route::get('/cadastrar/bebidas', 'HomeController@cadbebidas')->name('cadbebidas');
+Route::get('/cadastrar/refeicao', 'RefeicaoController@indexRefeicao')->name('index.admin.refeicao');
