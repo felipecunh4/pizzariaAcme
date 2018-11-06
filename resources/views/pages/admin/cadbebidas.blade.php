@@ -38,7 +38,7 @@
                 <div class="form-group">
                     <label>Quantidade</label>
                     <div class="input-group">
-                        <span class="input-group-addon"><i class=""></i></span>
+                        <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
                         <input type="text" class="form-control">
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="form-group">
                     <label>Preço</label>
                     <div class="input-group">
-                        <span class="input-group-addon"><i class=""></i></span>
+                        <span class="input-group-addon"><i class="fa fa-usd"></i></span>
                         <input type="text" class="form-control">
                     </div>
                 </div>
