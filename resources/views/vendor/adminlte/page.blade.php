@@ -76,6 +76,11 @@
                                 </form>
                             @endif
                         </li>
+                        <li>
+                            <a href="{{url('/')}}">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 @if(config('adminlte.layout') == 'top-nav')

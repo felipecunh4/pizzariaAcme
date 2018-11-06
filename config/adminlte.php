@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Pizzaria</b>Acme',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b>A</b><cme></cme>',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'yellow',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,8 +108,8 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
-        [
+        'MENU',
+        /*[
             'text' => 'Blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
@@ -120,8 +120,18 @@ return [
             'icon'        => 'file',
             'label'       => 4,
             'label_color' => 'success',
+        ],*/
+        [
+            'text'    => 'Cadastrar',
+            'icon'    => 'plus-square',
+            'submenu' => [
+              [
+                  'text' => 'Refeições',
+                  'icon' => 'spoon',
+              ],
+            ],
         ],
-        'ACCOUNT SETTINGS',
+        /*'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
             'url'  => 'admin/settings',
@@ -182,7 +192,7 @@ return [
         [
             'text'       => 'Information',
             'icon_color' => 'aqua',
-        ],
+        ],*/
     ],
 
     /*
