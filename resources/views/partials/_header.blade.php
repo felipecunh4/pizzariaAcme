@@ -14,10 +14,10 @@
                         <li class="list-inline-item"><a href="javascript:void(0)"><i class="ion-email"></i> support@resto.com</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-6 text-right">
+                {{--<div class="col-sm-6 text-right">
                     <ul class="list-inline level-2">
                         <li class="b-table list-inline-item"><a href="#" class=" waves-float waves-button">Book a table</a></li>
-                        {{--<li class="lang list-inline-item"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Lang </i></a>
+                        --}}{{--<li class="lang list-inline-item"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Lang </i></a>
                             <ul class="dropdown-menu lang-dropdown">
                                 <li><a href="javascript:void(0)"><img class="flag" src="assets/images/spanish.png" alt="Spanish">Spanish</a></li>
                                 <li><a href="javascript:void(0)"><img class="flag" src="assets/images/italy.png" alt="Italian">Italian</a></li>
@@ -27,9 +27,9 @@
                                 <li><a href="javascript:void(0)"><img class="flag" src="assets/images/jp.png" alt="Japanise">Japanise</a></li>
                                 <li><a href="javascript:void(0)"><img class="flag" src="assets/images/in.png" alt="Hindi">Hindi</a></li>
                             </ul>
-                        </li>--}}
+                        </li>--}}{{--
                     </ul>
-                </div>
+                </div>--}}
             </div>
         </div>
     </div>
@@ -75,13 +75,8 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown nav-item">
-                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a class="dropdown-item" href="menu-simple.html">Menu simple</a></li>
-                            <li><a class="dropdown-item" href="menu-tiles.html">Menu tiles</a></li>
-                            <li><a class="dropdown-item" href="menu-grid.html">Menu grid</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a href="{{route('index.cardapio')}}" class="nav-link">Cardápio</a>
                     </li>
                     <li class="dropdown nav-item">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="caret"></span></a>
@@ -93,7 +88,7 @@
                             <li><a class="dropdown-item" href="blog-post.html">Single Page</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="reservation.html">Reservation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('index.reserva')}}">Reservas</a></li>
                     <li class="dropdown nav-item">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -108,14 +103,7 @@
                             <li><a class="dropdown-item" href="elements.html">Eelements</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown nav-item">
-                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop <span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a class="dropdown-item" href="shop-products.html">Products</a></li>
-                            <li><a class="dropdown-item" href="shop-cart.html">Cart</a></li>
-                            <li><a class="dropdown-item" href="shop-checkout.html">Checkout</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('index.produtos')}}">Produtos</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
             <!--cart icon-->
