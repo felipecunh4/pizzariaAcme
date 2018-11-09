@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('Cadastro de refeicao', 'Pizzaria Tech')
+@section('Cadastro de Refeições', 'Pizzaria Tech')
 
 <link rel="stylesheet" href="{{asset('css/botao-invisivel.css')}}">
 
