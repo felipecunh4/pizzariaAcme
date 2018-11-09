@@ -25,35 +25,35 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label>Nome Refeição</label>
+                            <label for="nm_refeicao">Nome Refeição</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
-                                <input type="text" class="form-control" name="nm_refeicao">
+                                <input id="nm_refeicao" type="text" class="form-control" name="nm_refeicao">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label>Quantidade</label>
+                            <label for="qt_refeicao">Quantidade</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
-                                <input type="text" class="form-control" name="qt_refeicao">
+                                <input id="qt_refeicao" type="text" class="form-control" name="qt_refeicao">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label>Preço</label>
+                            <label for="vl_refeicao">Preço</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                                <input type="text" class="form-control" name="vl_refeicao">
+                                <input id="vl_refeicao" type="text" class="form-control" name="vl_refeicao">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10">
                         <div class="form-group">
-                            <label>Descrição</label>
-                            <textarea class="form-control" name="desc_refeicao" style="resize: none;" rows="5" maxlength="250"></textarea>
+                            <label for="desc_refeicao">Descrição</label>
+                            <textarea id="desc_refeicao" class="form-control" name="desc_refeicao" style="resize: none;" rows="5" maxlength="250"></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -148,7 +148,7 @@
                                 <div class="row">
                                     <div class="col-md-3" hidden>
                                         <div class="form-group">
-                                            <label>Id Refeição:</label>
+                                            <label for="id_modal">Id Refeição:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
                                                 <input id="id_modal" type="number" class="form-control" name="id_refeicao" readonly required>
@@ -158,7 +158,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Nome Refeição:</label>
+                                            <label for="nm_modal">Nome Refeição:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
                                                 <input id="nm_modal" type="text" class="form-control" name="nm_refeicao" required maxlength="45">
@@ -168,7 +168,7 @@
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label>Quantidade:</label>
+                                            <label for="qt_modal">Quantidade:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
                                                 <input id="qt_modal" type="number" class="form-control" name="qt_refeicao" required>
@@ -178,7 +178,7 @@
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label>Preço:</label>
+                                            <label for="vl_modal">Preço:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
                                                 <input id="vl_modal" type="text" class="form-control" name="vl_refeicao" required>
@@ -188,7 +188,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Descrição:</label>
+                                            <label for="desc_modal">Descrição:</label>
                                             <textarea id="desc_modal" class="form-control" name="desc_refeicao" rows="5" style="resize: none;" maxlength="250"></textarea>
                                         </div>
                                     </div>
