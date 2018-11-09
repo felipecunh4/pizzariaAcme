@@ -26,7 +26,7 @@
 
             @foreach($refeicao as $r)
                 <div class=" refeicao col-md-4 margin-b-30 menu-item">
-                    <a href="#" class="menu-grid">
+                    <a href="{{route('index.detalhes')}}" class="menu-grid">
                         <img src="{{asset('img/pizzas/' . $r->img_refeicao)}}" alt="{{$r->nm_refeicao}}" class="img-fluid">
                         <div class="menu-grid-desc">
                             <span class="price float-right">R$ {{$r->vl_refeicao}}</span>
@@ -40,7 +40,7 @@
             @endforeach
             @foreach($bebidas as $b)
                 <div class=" bebidas col-md-4 margin-b-30 menu-item">
-                    <a href="#" class="menu-grid">
+                    <a href="{{route('index.detalhes')}}" class="menu-grid">
                         <img src="{{asset('img/bebidas/' . $b->img_bebida)}}" alt="{{$b->nm_bebida}}" class="img-fluid">
                         <div class="menu-grid-desc">
                             <span class="price float-right">R$ {{$b->vl_bebida}}</span>
