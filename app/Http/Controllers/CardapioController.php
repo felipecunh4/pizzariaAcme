@@ -25,7 +25,14 @@ class CardapioController extends Controller
         return view('pages.app.indexReserva');
     }
 
-    public function indexDetalhes(){
-        return view('pages.app.details');
+    public function indexDetalhes($slug){
+
+        $item = Refeicao::where('slug_refeicao', '=', $slug)->get();
+
+        if(count($item) == 0){
+            $item = Bebida::where('slug_bebida', '=', $slug)->get();
+        }
+
+        return view('pages.app.details', compact('item'));
     }
 }

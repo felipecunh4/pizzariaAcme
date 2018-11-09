@@ -12,6 +12,6 @@ class Refeicao extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'nm_refeicao', 'desc_refeicao', 'img_refeicao', 'vl_refeicao', 'qt_refeicao'
+        'nm_refeicao', 'desc_refeicao', 'img_refeicao', 'vl_refeicao', 'qt_refeicao', 'slug_refeicao'
     ];
 }

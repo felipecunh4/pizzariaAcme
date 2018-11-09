@@ -12,6 +12,6 @@ class Bebida extends Model
     public $timestamps = false;
 
     protected  $fillable = [
-      'nm_bebida', 'vl_bebida', 'qt_bebida', 'img_bebida', 'desc_bebida'
+      'nm_bebida', 'vl_bebida', 'qt_bebida', 'img_bebida', 'desc_bebida', 'slug_bebida'
     ];
 }

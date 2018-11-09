@@ -25,7 +25,9 @@ class RefeicaoController extends Controller
 
                 $imageName = $this->createImage($request->images, $request->nm_refeicao);
 
-                $this->createRefeicao($request->nm_refeicao, $request->desc_refeicao, $request->vl_refeicao, $request->qt_refeicao, $imageName);
+                $slugname = str_slug($request->nm_refeicao, '-');
+
+                $this->createRefeicao($request->nm_refeicao, $request->desc_refeicao, $request->vl_refeicao, $request->qt_refeicao, $imageName, $slugname);
 
             }
         }
@@ -61,14 +63,15 @@ class RefeicaoController extends Controller
 
     //==================================================================================================================
     //CRIA A REFEIÇÃO
-    public function createRefeicao($nome, $desc, $valor, $qtd, $img)
+    public function createRefeicao($nome, $desc, $valor, $qtd, $img, $slug)
     {
         return Refeicao::firstOrCreate([
             'nm_refeicao' => $nome,
             'desc_refeicao' => $desc,
             'vl_refeicao' => str_replace(",", ".", $valor),
             'qt_refeicao' => $qtd,
-            'img_refeicao' => $img
+            'img_refeicao' => $img,
+            'slug_refeicao' => $slug
         ]);
     }
 
@@ -107,6 +110,8 @@ class RefeicaoController extends Controller
             $ref->qt_refeicao = $request->qt_refeicao;
             $ref->vl_refeicao = str_replace(",", ".", $request->vl_refeicao);
             $ref->desc_refeicao = $request->desc_refeicao;
+            $slugname = str_slug($request->nm_refeicao, '-');
+            $ref->slug_refeicao = $slugname;
 
             if($request->hasFile('images')){
                 $this->deleteImageFile($ref->img_refeicao);

@@ -25,7 +25,9 @@ class BebidaController extends Controller
 
                 $imageName = $this->createImage($request->images, $request->nm_bebida);
 
-                $this->createBebida($request->nm_bebida, $request->desc_bebida, $request->vl_bebida, $request->qt_bebida, $imageName);
+                $slugname = str_slug($request->nm_bebida, '-');
+
+                $this->createBebida($request->nm_bebida, $request->desc_bebida, $request->vl_bebida, $request->qt_bebida, $imageName, $slugname);
 
             }
         }
@@ -61,14 +63,15 @@ class BebidaController extends Controller
 
     //==================================================================================================================
     //CRIA A REFEIÇÃO
-    public function createBebida($nome, $desc, $valor, $qtd, $img)
+    public function createBebida($nome, $desc, $valor, $qtd, $img, $slug)
     {
         return Bebida::firstOrCreate([
             'nm_bebida' => $nome,
             'desc_bebida' => $desc,
             'vl_bebida' => str_replace(",", ".", $valor),
             'qt_bebida' => $qtd,
-            'img_bebida' => $img
+            'img_bebida' => $img,
+            'slug_bebida' => $slug
         ]);
     }
 
@@ -77,7 +80,7 @@ class BebidaController extends Controller
     public function deleteBebida($id){
         try{
             $ref = Bebida::find($id);
-            $this->deleteImageFile($ref->img_refeicao);
+            $this->deleteImageFile($ref->img_bebida);
             $ref->delete();
         }
         catch (\Exception $e){
@@ -107,6 +110,8 @@ class BebidaController extends Controller
             $bebida->qt_bebida = $request->qt_bebida;
             $bebida->vl_bebida = str_replace(",", ".", $request->vl_bebida);
             $bebida->desc_bebida = $request->desc_bebida;
+            $slugname = str_slug($request->nm_bebida, '-');
+            $bebida->slug_bebida = $slugname;
 
             if($request->hasFile('images')){
                 $this->deleteImageFile($bebida->img_bebida);

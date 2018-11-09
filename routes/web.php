@@ -15,7 +15,7 @@ Route::get('/', 'ProdutosController@indexApp')->name('index');
 Route::get('/cardapio', 'CardapioController@indexCardapio')->name('index.cardapio');
 Route::get('/produtos', 'CardapioController@indexProdutos')->name('index.produtos');
 Route::get('/reservas', 'CardapioController@indexReserva')->name('index.reserva');
-Route::get('/detalhes', 'CardapioController@indexDetalhes')->name('index.detalhes');
+Route::get('/detalhes/{slug}', 'CardapioController@indexDetalhes')->name('index.detalhes');
 
 //=====================================================================================================================
 //REFEIÇÕES
