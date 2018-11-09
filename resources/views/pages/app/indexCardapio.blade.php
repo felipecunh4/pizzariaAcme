@@ -18,9 +18,26 @@
             <li data-filter=".breakfast">Breakfast</li>
             <li data-filter=".lunch">Lunch</li>
             <li data-filter=".dinner">Dinner</li>
+            <li data-filter=".refeicao">Pizzas</li>
 
         </ul>
         <div class="row menu-filter-items">
+
+            @foreach($refeicao as $r)
+                <div class=" refeicao col-md-4 margin-b-30 menu-item">
+                    <a href="#" class="menu-grid">
+                        <img src="{{asset('img/pizzas/' . $r->img_refeicao)}}" alt="{{$r->nm_refeicao}}" class="img-fluid">
+                        <div class="menu-grid-desc">
+                            <span class="price float-right">R$ {{$r->vl_refeicao}}</span>
+                            <h4>{{$r->nm_refeicao}}</h4>
+                            <p>
+                                {{$r->desc_refeicao}}
+                            </p>
+                        </div>
+                    </a>
+                </div><!--end col-->
+            @endforeach
+
             <div class=" start breakfast col-md-4 margin-b-30 menu-item">
                 <a href="#" class="menu-grid">
                     <img src="{{asset('img/img-1.jpg')}}" alt="" class="img-fluid">

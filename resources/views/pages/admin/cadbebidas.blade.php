@@ -6,7 +6,7 @@
     <h1>Cadastrar Bebida</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item active"><a href="javascript:void(0)"><i class="fa plus-square"></i>Cadastrar</a></li>
-        <li class="breadcrumb-item active"><a href="javascript:void(1)">Bebidas</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:void(0)">Bebidas</a></li>
     </ol>
 @stop
 

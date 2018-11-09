@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Refeicao;
 use Illuminate\Http\Request;
 
 class CardapioController extends Controller
@@ -9,7 +10,9 @@ class CardapioController extends Controller
     //
 
     public function indexCardapio(){
-        return view('pages.app.indexCardapio');
+        $refeicao = Refeicao::all();
+
+        return view('pages.app.indexCardapio', compact('refeicao'));
     }
 
     public function indexProdutos(){
