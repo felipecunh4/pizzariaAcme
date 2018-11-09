@@ -26,10 +26,6 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function indexApp(){
-        return view('pages.app.index');
-    }
-
     public function cadbebidas(){
         return view('pages.admin.cadbebidas');
     }
