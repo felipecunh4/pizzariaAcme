@@ -138,7 +138,7 @@ return [
 
               [
                   'text' => 'Sobremesas',
-                  'url'  => '#',
+                  'url'  => '/cadastrar/sobremesa',
                   'icon' => 'birthday-cake',
               ],
               [

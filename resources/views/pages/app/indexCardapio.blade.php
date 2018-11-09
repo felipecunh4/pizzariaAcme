@@ -14,19 +14,16 @@
     <div class="container">
         <ul class="menu-filter-list list-inline margin-b-40 text-center">
             <li class="is-checked" data-filter="*">All</li>
-            <li data-filter=".start">start</li>
-            <li data-filter=".breakfast">Breakfast</li>
-            <li data-filter=".lunch">Lunch</li>
-            <li data-filter=".dinner">Dinner</li>
             <li data-filter=".refeicao">Pizzas</li>
             <li data-filter=".bebidas">Bebidas</li>
-
+            <li data-filter=".sobremesas">Sobremesas</li>
         </ul>
+
         <div class="row menu-filter-items">
 
             @foreach($refeicao as $r)
                 <div class=" refeicao col-md-4 margin-b-30 menu-item">
-                    <a href="{{route('index.detalhes')}}" class="menu-grid">
+                    <a href="{{route('index.detalhes', $r->slug_refeicao)}}" class="menu-grid">
                         <img src="{{asset('img/pizzas/' . $r->img_refeicao)}}" alt="{{$r->nm_refeicao}}" class="img-fluid">
                         <div class="menu-grid-desc">
                             <span class="price float-right">R$ {{$r->vl_refeicao}}</span>
@@ -38,9 +35,10 @@
                     </a>
                 </div><!--end col-->
             @endforeach
+
             @foreach($bebidas as $b)
                 <div class=" bebidas col-md-4 margin-b-30 menu-item">
-                    <a href="{{route('index.detalhes')}}" class="menu-grid">
+                    <a href="{{route('index.detalhes', $b->slug_bebida)}}" class="menu-grid">
                         <img src="{{asset('img/bebidas/' . $b->img_bebida)}}" alt="{{$b->nm_bebida}}" class="img-fluid">
                         <div class="menu-grid-desc">
                             <span class="price float-right">R$ {{$b->vl_bebida}}</span>
@@ -53,114 +51,21 @@
                 </div><!--end col-->
             @endforeach
 
-            <div class=" start breakfast col-md-4 margin-b-30 menu-item">
-                <a href="#" class="menu-grid">
-                    <img src="{{asset('img/img-1.jpg')}}" alt="" class="img-fluid">
-                    <div class="menu-grid-desc">
-                        <span class="price float-right">$12.50</span>
-                        <h4>Menu title</h4>
-                        <p>
-                            Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                        </p>
-                    </div>
-                </a>
-            </div><!--end col-->
-            <div class=" dinner lunch col-md-4 margin-b-30 menu-item">
-                <a href="#" class="menu-grid">
-                    <img src="{{asset('img/img-2.jpg')}}" alt="" class="img-fluid">
-                    <div class="menu-grid-desc">
-                        <span class="price float-right">$9.50</span>
-                        <h4>Menu title</h4>
-                        <p>
-                            Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                        </p>
-                    </div>
-                </a>
-            </div><!--end col-->
-            <div class=" start lunch col-md-4 margin-b-30 menu-item">
-                <a href="#" class="menu-grid">
-                    <img src="{{asset('img/img-3.jpg')}}" alt="" class="img-fluid">
-                    <div class="menu-grid-desc">
-                        <span class="price float-right">$9.50</span>
-                        <h4>Menu title</h4>
-                        <p>
-                            Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                        </p>
-                    </div>
-                </a>
-            </div><!--end col-->
-            <div class=" breakfast lunch col-md-4 margin-b-30 menu-item">
-                <a href="#" class="menu-grid">
-                    <img src="{{asset('img/img-4.jpg')}}" alt="" class="img-fluid">
-                    <div class="menu-grid-desc">
-                        <span class="price float-right">$9.50</span>
-                        <h4>Menu title</h4>
-                        <p>
-                            Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                        </p>
-                    </div>
-                </a>
-            </div><!--end col-->
-            <div class=" dinner start col-md-4 margin-b-30 menu-item">
-                <a href="#" class="menu-grid">
-                    <img src="{{asset('img/img-5.jpg')}}" alt="" class="img-fluid">
-                    <div class="menu-grid-desc">
-                        <span class="price float-right">$9.50</span>
-                        <h4>Menu title</h4>
-                        <p>
-                            Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                        </p>
-                    </div>
-                </a>
-            </div><!--end col-->
-            <div class=" breakfast col-md-4 margin-b-30 menu-item">
-                <a href="#" class="menu-grid">
-                    <img src="{{asset('img/img-6.jpg')}}" alt="" class="img-fluid">
-                    <div class="menu-grid-desc">
-                        <span class="price float-right">$9.50</span>
-                        <h4>Menu title</h4>
-                        <p>
-                            Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                        </p>
-                    </div>
-                </a>
-            </div><!--end col-->
-            <div class=" dinner start col-md-4 margin-b-30 menu-item">
-                <a href="#" class="menu-grid">
-                    <img src="{{asset('img/img-7.jpg')}}" alt="" class="img-fluid">
-                    <div class="menu-grid-desc">
-                        <span class="price float-right">$9.50</span>
-                        <h4>Menu title</h4>
-                        <p>
-                            Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                        </p>
-                    </div>
-                </a>
-            </div><!--end col-->
-            <div class=" breakfast lunch col-md-4 margin-b-30 menu-item">
-                <a href="#" class="menu-grid">
-                    <img src="{{asset('img/img-8.jpg')}}" alt="" class="img-fluid">
-                    <div class="menu-grid-desc">
-                        <span class="price float-right">$9.50</span>
-                        <h4>Menu title</h4>
-                        <p>
-                            Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                        </p>
-                    </div>
-                </a>
-            </div><!--end col-->
-            <div class=" start dinner col-md-4 margin-b-30 menu-item">
-                <a href="#" class="menu-grid">
-                    <img src="{{asset('img/img-9.jpg')}}" alt="" class="img-fluid">
-                    <div class="menu-grid-desc">
-                        <span class="price float-right">$9.50</span>
-                        <h4>Menu title</h4>
-                        <p>
-                            Mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
-                        </p>
-                    </div>
-                </a>
-            </div><!--end col-->
+                @foreach($sobremesas as $sm)
+                    <div class=" sobremesas col-md-4 margin-b-30 menu-item">
+                        <a href="{{route('index.detalhes', $sm->slug_sobremesa)}}" class="menu-grid">
+                            <img src="{{asset('img/sobremesas/' . $sm->img_sobremesa)}}" alt="{{$sm->nm_sobremesa}}" class="img-fluid">
+                            <div class="menu-grid-desc">
+                                <span class="price float-right">R$ {{$sm->vl_sobremesa}}</span>
+                                <h4>{{$sm->nm_sobremesa}}</h4>
+                                <p>
+                                    {{$sm->desc_sobremesa}}
+                                </p>
+                            </div>
+                        </a>
+                    </div><!--end col-->
+                @endforeach
+
         </div>
     </div>
 

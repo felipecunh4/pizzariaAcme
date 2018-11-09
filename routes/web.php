@@ -30,3 +30,10 @@ Route::get('/cadastrar/bebidas', 'BebidaController@indexBebida')->name('index.ad
 Route::post('/save/bebida', 'BebidaController@saveBebida')->name('save.bebida');
 Route::post('/delete/bebida/{id}', 'BebidaController@deleteBebida')->name('delete.bebida');
 Route::post('/update/bebida', 'BebidaController@atualizaBebida')->name('update.bebida');
+
+//=====================================================================================================================
+//BEBIDAS
+Route::get('/cadastrar/sobremesa', 'SobremesaController@indexSobremesa')->name('index.admin.sobremesa');
+Route::post('/save/sobremesa', 'SobremesaController@saveSobremesa')->name('save.sobremesa');
+Route::post('/delete/sobremesa/{id}', 'SobremesaController@deleteSobremesa')->name('delete.sobremesa');
+Route::post('/update/sobremesa', 'SobremesaController@atualizaSobremesa')->name('update.sobremesa');

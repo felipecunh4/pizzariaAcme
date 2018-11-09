@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bebida;
 use App\Refeicao;
+use App\Sobremesa;
 use Illuminate\Http\Request;
 
 class CardapioController extends Controller
@@ -13,8 +14,9 @@ class CardapioController extends Controller
     public function indexCardapio(){
         $refeicao = Refeicao::all();
         $bebidas = Bebida::all();
+        $sobremesas = Sobremesa::all();
 
-        return view('pages.app.indexCardapio', compact('refeicao', 'bebidas'));
+        return view('pages.app.indexCardapio', compact('refeicao', 'bebidas', 'sobremesas'));
     }
 
     public function indexProdutos(){

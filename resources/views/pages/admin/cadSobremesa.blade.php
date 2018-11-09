@@ -1,14 +1,14 @@
 @extends('adminlte::page')
 
-@section('Cadastro de Refeições', 'Pizzaria Tech')
+@section('Cadastro de Sobremesas', 'Pizzaria Tech')
 
 <link rel="stylesheet" href="{{asset('css/botao-invisivel.css')}}">
 
 @section('content_header')
-    <h1>Refeições</h1>
+    <h1>Sobremesas</h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fa fa-plus-square"></i>Cadastrar</a></li>
-        <li class="breadcrumb-item active"><a href="javascript:void(0)">Refeições</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:void(0)">Sobremesa</a></li>
     </ol>
 @stop
 
@@ -16,44 +16,44 @@
     @include('partials.admin._alerts')
     <div class="box">
         <div class="box-header">
-            <h4>Cadastrar Refeição</h4>
+            <h4>Cadastrar Sobremesa</h4>
         </div>
         <div class="box-body">
-            <form method="post" action="{{route('save.refeicao')}}"  enctype="multipart/form-data">
+            <form method="post" action="{{route('save.sobremesa')}}"  enctype="multipart/form-data">
                 {{csrf_field()}}
 
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="nm_refeicao">Nome Refeição</label>
+                            <label for="nm_sobremesa">Nome Sobremesa</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
-                                <input id="nm_refeicao" type="text" class="form-control" name="nm_refeicao">
+                                <input id="nm_sobremesa" type="text" class="form-control" name="nm_sobremesa" maxlength="20">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="qt_refeicao">Quantidade</label>
+                            <label for="qt_sobremesa">Quantidade</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
-                                <input id="qt_refeicao" type="text" class="form-control" name="qt_refeicao">
+                                <input id="qt_sobremesa" type="text" class="form-control" name="qt_sobremesa">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="vl_refeicao">Preço</label>
+                            <label for="vl_sobremesa">Preço</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                                <input id="vl_refeicao" type="text" class="form-control" name="vl_refeicao">
+                                <input id="vl_sobremesa" type="text" class="form-control" name="vl_sobremesa">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10">
                         <div class="form-group">
-                            <label for="desc_refeicao">Descrição</label>
-                            <textarea id="desc_refeicao" class="form-control" name="desc_refeicao" style="resize: none;" rows="5" maxlength="250"></textarea>
+                            <label for="desc_sobremesa">Descrição</label>
+                            <textarea id="desc_sobremesa" class="form-control" name="desc_sobremesa" style="resize: none;" rows="5" maxlength="80"></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -77,49 +77,49 @@
 
     <div class="box">
         <div class="box-header">
-            <h4>Lista de Refeições</h4>
+            <h4>Lista de Sobremesas</h4>
         </div>
         <div class="box-body">
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-striped table-responsive">
                         <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Imagem</th>
-                                <th>Nome</th>
-                                <th>Quantidade</th>
-                                <th>Preço</th>
-                                <th></th>
-                            </tr>
+                        <tr>
+                            <th>Id</th>
+                            <th>Imagem</th>
+                            <th>Nome</th>
+                            <th>Quantidade</th>
+                            <th>Preço</th>
+                            <th></th>
+                        </tr>
                         </thead>
                         <tbody>
-                            @foreach($refeicoes as $r)
-                                <tr>
-                                    <td>{{$r->id_refeicao}}</td>
-                                    <td>
-                                        <img src="{{ URL::asset('img/pizzas/' . $r->img_refeicao) }}"
-                                             alt="{{ $r->nm_refeicao }}" style="width: 150px; height: 120px;">
-                                    </td>
-                                    <td>{{$r->nm_refeicao}}</td>
-                                    <td>{{$r->qt_refeicao}}</td>
-                                    <td>{{$r->vl_refeicao}}</td>
-                                    <td hidden>{{$r->desc_refeicao}}</td>
-                                    <td class="pull-right">
-                                        <button id="btn_editar" title="Editar Refeição"
-                                                class="fa fa-pencil btn btn-outline-warning"
-                                                data-toggle="modal" data-target="#modal-default" style="color: #367fa9">
-                                        </button>
-                                        <button id="btn_excluir"
-                                                value="{{$r->id_refeicao}}"
-                                                title="Deletar Refeição"
-                                                class="btn btn-outline-warning"
-                                                style="color: #cc0000">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            @endforeach
+                        @foreach($sobremesas as $sm)
+                            <tr>
+                                <td>{{$sm->id_sobremesa}}</td>
+                                <td>
+                                    <img src="{{ URL::asset('img/sobremesas/' . $sm->img_sobremesa) }}"
+                                         alt="{{ $sm->nm_sobremesa}}" style="width: 150px; height: 120px;">
+                                </td>
+                                <td>{{$sm->nm_sobremesa}}</td>
+                                <td>{{$sm->qt_sobremesa}}</td>
+                                <td>{{$sm->vl_sobremesa}}</td>
+                                <td hidden>{{$sm->desc_sobremesa}}</td>
+                                <td class="pull-right">
+                                    <button id="btn_editar" title="Editar Sobremesa"
+                                            class="fa fa-pencil btn btn-outline-warning"
+                                            data-toggle="modal" data-target="#modal-default" style="color: #367fa9">
+                                    </button>
+                                    <button id="btn_excluir"
+                                            value="{{$sm->id_sobremesa}}"
+                                            title="Deletar Sobremesa"
+                                            class="btn btn-outline-warning"
+                                            style="color: #cc0000">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -127,8 +127,8 @@
         </div>
     </div>
 
-    <!-- MODAL ATUALIZA BANNER -->
-    <form method="post" action="{{route('update.refeicao')}}" enctype="multipart/form-data">
+    <!-- MODAL ATUALIZA BEBIDA -->
+    <form method="post" action="{{route('update.sobremesa')}}" enctype="multipart/form-data">
 
         {{ csrf_field() }}
 
@@ -138,7 +138,7 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Atualizar Refeição</h4>
+                        <h4 class="modal-title">Atualizar Sobremesa</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -148,20 +148,20 @@
                                 <div class="row">
                                     <div class="col-md-3" hidden>
                                         <div class="form-group">
-                                            <label for="id_modal">Id Refeição:</label>
+                                            <label for="id_modal">Id Sobremesa:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                                                <input id="id_modal" type="number" class="form-control" name="id_refeicao" readonly required>
+                                                <input id="id_modal" type="number" class="form-control" name="id_sobremesa" readonly required>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="nm_modal">Nome Refeição:</label>
+                                            <label for="nm_modal">Nome Sobremesa:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
-                                                <input id="nm_modal" type="text" class="form-control" name="nm_refeicao" required maxlength="45">
+                                                <input id="nm_modal" type="text" class="form-control" name="nm_sobremesa" required maxlength="20">
                                             </div>
                                         </div>
                                     </div>
@@ -171,7 +171,7 @@
                                             <label for="qt_modal">Quantidade:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                                                <input id="qt_modal" type="number" class="form-control" name="qt_refeicao" required>
+                                                <input id="qt_modal" type="number" class="form-control" name="qt_sobremesa" required>
                                             </div>
                                         </div>
                                     </div>
@@ -181,7 +181,7 @@
                                             <label for="vl_modal">Preço:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                                                <input id="vl_modal" type="text" class="form-control" name="vl_refeicao" required>
+                                                <input id="vl_modal" type="text" class="form-control" name="vl_sobremesa" required>
                                             </div>
                                         </div>
                                     </div>
@@ -189,7 +189,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="desc_modal">Descrição:</label>
-                                            <textarea id="desc_modal" class="form-control" name="desc_refeicao" rows="5" style="resize: none;" maxlength="250"></textarea>
+                                            <textarea id="desc_modal" class="form-control" name="desc_sobremesa" rows="5" style="resize: none;" maxlength="80"></textarea>
                                         </div>
                                     </div>
 
@@ -255,13 +255,13 @@
             //==================================================================================================================
             //BOTÃO PARA EXCLUIR A REFEIÇÃO
             $('button#btn_excluir').click(function(){
-                let id_refeicao = $(this).val();
+                let id_sobremesa = $(this).val();
                 let campoTR = $(this).parent().parent();
                 let token = $("input[name='_token']").val();
 
                 swal({
                     title: "Você tem certeza que deseja deletar ?",
-                    text: "Uma vez deletada, você não terá mais acesso a essa refeição.",
+                    text: "Uma vez deletada, você não terá mais acesso a essa sobremesa.",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
@@ -270,7 +270,7 @@
                         if(vaiApagar){
 
                             $.ajax({
-                                url: '{{url('delete/refeicao/')}}/' + id_refeicao,
+                                url: '{{url('delete/sobremesa/')}}/' + id_sobremesa,
                                 type: 'post',
                                 data: {_token: token},
                                 success: function(data){
@@ -278,13 +278,13 @@
                                         campoTR.fadeOut(500, function () {
                                             $(this).remove();
 
-                                            swal("Refeição deletada com sucesso!", {
+                                            swal("Sobremesa deletada com sucesso!", {
                                                 icon: "success",
                                             });
                                         });
                                     }
                                     else{
-                                        swal("Erro ao deletar a refeição.", {
+                                        swal("Erro ao deletar a sobremesa.", {
                                             icon: "error",
                                         });
                                     }

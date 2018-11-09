@@ -7,7 +7,7 @@
 @section('content_header')
     <h1>Bebidas</h1>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item active"><a href="javascript:void(0)"><i class="fa fa-plus-square"></i>Cadastrar</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)"><i class="fa fa-plus-square"></i>Cadastrar</a></li>
         <li class="breadcrumb-item active"><a href="javascript:void(0)">Bebidas</a></li>
     </ol>
 @stop
