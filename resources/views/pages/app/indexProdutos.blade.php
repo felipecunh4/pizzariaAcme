@@ -28,7 +28,11 @@
                         </div>
                         <div class="product-detail">
                             <h4><a href="#">{{$r->nm_cardapio}}</a></h4>
-                            <span>R$ {{$r->vl_cardapio}}</span>
+                            @if($r->vl_oferta == null)
+                                <span>R$ {{$r->vl_cardapio}}</span>
+                            @else
+                                <span>R$ {{$r->vl_oferta}}</span>
+                            @endif
                         </div>
                     </div><!--product box end-->
                 </div><!--col end-->

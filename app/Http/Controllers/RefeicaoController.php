@@ -47,7 +47,7 @@ class RefeicaoController extends Controller
             }
         }
         catch (\Exception $e){
-            return redirect()->route('index.admin.refeicao')->with('nosuccess', 'Erro ao tentar salvar cardápio.');
+            return redirect()->back()->with('nosuccess', 'Erro ao tentar salvar cardápio.');
             //throw $e;
         }
 

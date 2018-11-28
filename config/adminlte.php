@@ -154,6 +154,11 @@ return [
             'icon'    => 'book',
         ],
         [
+            'text'    => 'Ofertas',
+            'url'     => '/ofertas',
+            'icon'    => 'money',
+        ],
+        [
             'text'    => 'Pedidos',
             'url'     => '#',
             'icon'    => 'clipboard',

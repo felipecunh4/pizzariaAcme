@@ -32,7 +32,11 @@
                     <a href="{{route('index.detalhes', $r->slug_cardapio)}}" class="menu-grid">
                         <img src="{{asset('img/pizzas/' . $r->img_cardapio)}}" alt="{{$r->nm_cardapio}}" class="img-fluid">
                         <div class="menu-grid-desc">
-                            <span class="price float-right">R$ {{$r->vl_cardapio}}</span>
+                            @if($r->vl_oferta == null)
+                                <span class="price float-right">R$ {{$r->vl_cardapio}}</span>
+                            @else
+                                <span class="price float-right">R$ {{$r->vl_oferta}}</span>
+                            @endif
                             <h4>{{$r->nm_cardapio}}</h4>
                             <p>
                                 {{$r->desc_cardapio}}

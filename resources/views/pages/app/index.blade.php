@@ -56,8 +56,8 @@
 
     <div class="container">
         <div class="text-center">
-            <h1 class="title-1">Especiais <span class="text-color ">de Hoje</span></h1>
-            <h5 class="subtitle">Menu do Dia</h5>
+            <h1 class="title-1">Ofertas <span class="text-color ">de Hoje</span></h1>
+            <h5 class="subtitle">Ofertas do Dia</h5>
             <div class="space-30"></div>
         </div>
         <div class="row vertical-align-child">
@@ -66,131 +66,56 @@
 
                     <!-- Nav tabs -->
                     <ul class="nav menu-tabs margin-b-30" role="tablist">
-                        <li role="presentation" class="nav-item"><a class="active nav-link" href="#drink" aria-controls="drink" role="tab" data-toggle="tab">Drinks</a></li>
-                        <li role="presentation" class="nav-item"><a class="nav-link" href="#lunch" aria-controls="lunch" role="tab" data-toggle="tab">Lunch</a></li>
-                        <li role="presentation" class="nav-item"><a class="nav-link" href="#dinner" aria-controls="dinner" role="tab" data-toggle="tab">Dinner</a></li>
+                        <li role="presentation" class="nav-item"><a class="active nav-link" href="#refeicao" aria-controls="drink" role="tab" data-toggle="tab">Refeições</a></li>
+                        <li role="presentation" class="nav-item"><a class="nav-link" href="#bebida" aria-controls="lunch" role="tab" data-toggle="tab">Bebidas</a></li>
+                        <li role="presentation" class="nav-item"><a class="nav-link" href="#sobremesa" aria-controls="dinner" role="tab" data-toggle="tab">Sobremesas</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active show fade" id="drink">
+                        <div role="tabpanel" class="tab-pane active show fade" id="refeicao">
                             <ul class="list-unstyled">
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/a2.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Special Coffee</a> <span>$7.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/a3.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Beers</a> <span>$12.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/a2.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Milk Tea</a> <span>$16.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/img-6.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Juice</a> <span>$14.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
+                                @foreach($ofertasRef as $o)
+                                    <li class="menu-box clearfix margin-b-20">
+                                        <div class="thumb">
+                                            <img src="{{asset('img/pizzas/' . $o->img_cardapio)}}" width="70" class="img-fluid" alt="{{$o->nm_cardapio}}">
+                                        </div>
+                                        <div class="menu-content">
+                                            <h4><a href="{{route('index.detalhes', $o->slug_cardapio)}}">{{$o->nm_cardapio}}</a> <span>R$ {{$o->vl_oferta}}</span></h4>
+                                            <p>{{$o->desc_cardapio}}</p>
+                                        </div>
+                                    </li><!--end menu box-->
+                                @endforeach
                             </ul>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="lunch">
+                        <div role="tabpanel" class="tab-pane fade" id="bebida">
                             <ul class="list-unstyled">
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/img-6.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Salad</a> <span>$7.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/img-3.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Sandwiches</a> <span>$14.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/img-1.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Cakes</a> <span>$9.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/img-8.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Appetizers</a> <span>$4.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
+                                @foreach($ofertasBeb as $o)
+                                    <li class="menu-box clearfix margin-b-20">
+                                        <div class="thumb">
+                                            <img src="{{asset('img/pizzas/' . $o->img_cardapio)}}" width="70" class="img-fluid" alt="{{$o->nm_cardapio}}">
+                                        </div>
+                                        <div class="menu-content">
+                                            <h4><a href="{{route('index.detalhes', $o->slug_cardapio)}}">{{$o->nm_cardapio}}</a> <span>R$ {{$o->vl_oferta}}</span></h4>
+                                            <p>{{$o->desc_cardapio}}</p>
+                                        </div>
+                                    </li><!--end menu box-->
+                                @endforeach
                             </ul>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="dinner">
+                        <div role="tabpanel" class="tab-pane fade" id="sobremesa">
                             <ul class="list-unstyled">
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/img-9.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Rice & Flesh</a> <span>$8.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/img-6.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Seafood</a> <span>$11.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/img-5.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Chicken</a> <span>$6.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
-                                <li class="menu-box clearfix margin-b-20">
-                                    <div class="thumb">
-                                        <img src="{{asset('img/img-4.jpg')}}" width="70" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="menu-content">
-                                        <h4><a href="#">Veal & Beef</a> <span>$9.79</span></h4>
-                                        <p>pellentesque enim. Aliquam tempor</p>
-                                    </div>
-                                </li><!--end menu box-->
+                                @foreach($ofertasSob as $o)
+                                    <li class="menu-box clearfix margin-b-20">
+                                        <div class="thumb">
+                                            <img src="{{asset('img/pizzas/' . $o->img_cardapio)}}" width="70" class="img-fluid" alt="{{$o->nm_cardapio}}">
+                                        </div>
+                                        <div class="menu-content">
+                                            <h4><a href="{{route('index.detalhes', $o->slug_cardapio)}}">{{$o->nm_cardapio}}</a> <span>R$ {{$o->vl_oferta}}</span></h4>
+                                            <p>{{$o->desc_cardapio}}</p>
+                                        </div>
+                                    </li><!--end menu box-->
+                                @endforeach
                             </ul>
                         </div>
 
@@ -201,7 +126,7 @@
             <div class="col-md-6 text-center">
 
                 <div class="abso-img">
-                    <a href="{{route('index.produtos')}}" class="btn btn-dark btn-xl">View Full Menu</a>
+                    <a href="{{route('index.produtos')}}" class="btn btn-dark btn-xl">Ver Cardápio Completo</a>
                     <img src="{{asset('img/m1.jpg')}}" alt="" class="img-fluid">
                 </div>
             </div>

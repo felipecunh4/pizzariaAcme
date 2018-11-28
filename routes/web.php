@@ -30,3 +30,10 @@ Route::post('/update/refeicao', 'RefeicaoController@atualizaRefeicao')->name('up
 //=====================================================================================================================
 //CLIENTES
 Route::post('/cliente/save', 'ClienteController@saveCliente')->name('save.cliente');
+
+//=====================================================================================================================
+//OFERTAS
+Route::get('/ofertas', 'OfertaController@indexOferta')->name('index.oferta');
+Route::post('/save/ofertas/', 'OfertaController@saveOferta')->name('save.oferta');
+Route::post('/delete/ofertas/{id}', 'OfertaController@deleteOferta')->name('delete.oferta');
+Route::get('/ofertas/search/{id}', 'OfertaController@buscaRefeicao')->name('search.refeicao');

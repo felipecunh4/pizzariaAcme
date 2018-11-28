@@ -10,14 +10,18 @@ use Illuminate\Http\Request;
 class CardapioController extends Controller
 {
     public function indexCardapio(){
-        $refeicao = Refeicao::join('tipo_refeicao', 'tipo_refeicao.id_tipo_refeicao', '=', 'cardapio.fk_tipo_ref')
+        $refeicao = Refeicao::leftJoin('ofertas', 'ofertas.fk_id_cardapio', '=', 'cardapio.id_cardapio')
+            ->join('tipo_refeicao', 'tipo_refeicao.id_tipo_refeicao', '=', 'cardapio.fk_tipo_ref')
+            ->orderBy('cardapio.id_cardapio')
             ->get();
 
         return view('pages.app.indexCardapio', compact('refeicao'));
     }
 
     public function indexProdutos(){
-        $refeicao = Refeicao::paginate(3);
+        $refeicao = Refeicao::leftJoin('ofertas', 'ofertas.fk_id_cardapio', '=', 'cardapio.id_cardapio')
+                    ->orderBy('cardapio.id_cardapio')
+                    ->paginate(3);
 
         return view('pages.app.indexProdutos', compact('refeicao'));
     }
