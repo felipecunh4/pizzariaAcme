@@ -19,8 +19,10 @@
             <h4>Cadastrar Bebida</h4>
         </div>
         <div class="box-body">
-            <form method="post" action="{{route('save.bebida')}}"  enctype="multipart/form-data">
+            <form method="post" action="{{route('save.refeicao')}}"  enctype="multipart/form-data">
                 {{csrf_field()}}
+
+                <input hidden type="number" value="2" name="fk_tipo_ref">
 
                 <div class="row">
                     <div class="col-md-4">
@@ -28,7 +30,7 @@
                             <label for="nm_bebida">Nome Bebida</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
-                                <input id="nm_bebida" type="text" class="form-control" name="nm_bebida" maxlength="20">
+                                <input id="nm_bebida" type="text" class="form-control" name="nm_cardapio" maxlength="20">
                             </div>
                         </div>
                     </div>
@@ -37,7 +39,7 @@
                             <label for="qt_bebida">Quantidade</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
-                                <input id="qt_bebida" type="text" class="form-control" name="qt_bebida">
+                                <input id="qt_bebida" type="text" class="form-control" name="qt_cardapio">
                             </div>
                         </div>
                     </div>
@@ -46,14 +48,14 @@
                             <label for="vl_bebida">Preço</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                                <input id="vl_bebida" type="text" class="form-control" name="vl_bebida">
+                                <input id="vl_bebida" type="text" class="form-control" name="vl_cardapio">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10">
                         <div class="form-group">
                             <label for="desc_bebida">Descrição</label>
-                            <textarea id="desc_bebida" class="form-control" name="desc_bebida" style="resize: none;" rows="5" maxlength="80"></textarea>
+                            <textarea id="desc_bebida" class="form-control" name="desc_cardapio" style="resize: none;" rows="5" maxlength="80"></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -68,6 +70,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i>&nbsp;&nbsp;Salvar</button>
+                        {{--<button id="btn_teste" type="button" class="btn btn-danger pull-left">Teste</button>--}}
                     </div>
                 </div>
             </form>
@@ -96,22 +99,22 @@
                         <tbody>
                         @foreach($bebidas as $b)
                             <tr>
-                                <td>{{$b->id_bebida}}</td>
+                                <td>{{$b->id_cardapio}}</td>
                                 <td>
-                                    <img src="{{ URL::asset('img/bebidas/' . $b->img_bebida) }}"
-                                         alt="{{ $b->nm_bebida }}" style="width: 150px; height: 120px;">
+                                    <img src="{{ URL::asset('img/pizzas/' . $b->img_cardapio) }}"
+                                         alt="{{ $b->nm_cardapio}}" style="width: 150px; height: 120px;">
                                 </td>
-                                <td>{{$b->nm_bebida}}</td>
-                                <td>{{$b->qt_bebida}}</td>
-                                <td>{{$b->vl_bebida}}</td>
-                                <td hidden>{{$b->desc_bebida}}</td>
+                                <td>{{$b->nm_cardapio}}</td>
+                                <td>{{$b->qt_cardapio}}</td>
+                                <td>{{$b->vl_cardapio}}</td>
+                                <td hidden>{{$b->desc_cardapio}}</td>
                                 <td class="pull-right">
                                     <button id="btn_editar" title="Editar Bebida"
                                             class="fa fa-pencil btn btn-outline-warning"
                                             data-toggle="modal" data-target="#modal-default" style="color: #367fa9">
                                     </button>
                                     <button id="btn_excluir"
-                                            value="{{$b->id_bebida}}"
+                                            value="{{$b->id_cardapio}}"
                                             title="Deletar Bebida"
                                             class="btn btn-outline-warning"
                                             style="color: #cc0000">
@@ -128,7 +131,7 @@
     </div>
 
     <!-- MODAL ATUALIZA BEBIDA -->
-    <form method="post" action="{{route('update.bebida')}}" enctype="multipart/form-data">
+    <form method="post" action="{{route('update.refeicao')}}" enctype="multipart/form-data">
 
         {{ csrf_field() }}
 
@@ -144,14 +147,14 @@
                         <div class="row">
 
                             <div class="col-md-12">
-
+                                <input hidden type="number" value="2" name="fk_tipo_ref">
                                 <div class="row">
                                     <div class="col-md-3" hidden>
                                         <div class="form-group">
                                             <label for="id_modal">Id Bebida:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                                                <input id="id_modal" type="number" class="form-control" name="id_bebida" readonly required>
+                                                <input id="id_modal" type="number" class="form-control" name="id_cardapio" readonly required>
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +164,7 @@
                                             <label for="nm_modal">Nome Bebida:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
-                                                <input id="nm_modal" type="text" class="form-control" name="nm_bebida" required maxlength="20">
+                                                <input id="nm_modal" type="text" class="form-control" name="nm_cardapio" required maxlength="20">
                                             </div>
                                         </div>
                                     </div>
@@ -171,7 +174,7 @@
                                             <label for="qt_modal">Quantidade:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                                                <input id="qt_modal" type="number" class="form-control" name="qt_bebida" required>
+                                                <input id="qt_modal" type="number" class="form-control" name="qt_cardapio" required>
                                             </div>
                                         </div>
                                     </div>
@@ -181,7 +184,7 @@
                                             <label for="vl_modal">Preço:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                                                <input id="vl_modal" type="text" class="form-control" name="vl_bebida" required>
+                                                <input id="vl_modal" type="text" class="form-control" name="vl_cardapio" required>
                                             </div>
                                         </div>
                                     </div>
@@ -189,7 +192,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="desc_modal">Descrição:</label>
-                                            <textarea id="desc_modal" class="form-control" name="desc_bebida" rows="5" style="resize: none;" maxlength="80"></textarea>
+                                            <textarea id="desc_modal" class="form-control" name="desc_cardapio" rows="5" style="resize: none;" maxlength="80"></textarea>
                                         </div>
                                     </div>
 
@@ -270,7 +273,7 @@
                         if(vaiApagar){
 
                             $.ajax({
-                                url: '{{url('delete/bebida/')}}/' + id_bebida,
+                                url: '{{url('delete/refeicao/')}}/' + id_bebida,
                                 type: 'post',
                                 data: {_token: token},
                                 success: function(data){
@@ -293,6 +296,30 @@
                         }
                     });
             });
+
+            /*$('#btn_teste').click(function(){
+                let desc = "Um exeplo de um texto <p> com </p> tags <strong>HTML</strong> <span style='font-size='12''>.</span>";
+                console.log(desc);
+
+                let novaDesc = "";
+                let tag = false;
+                for(let i = 0; i < desc.length; i++){
+                    console.log(i + " : " + (i + 1));
+                    console.log(desc.substr(i, 1));
+
+                    if(!tag){
+                        if(desc.substr(i, 1) == "<")
+                            tag = true;
+                        else
+                            novaDesc = novaDesc + desc.substr(i,1);
+                    }
+                    else if(desc.substr(i, 1) == ">")
+                        tag = false;
+                }
+
+                console.log('NOVA DESCRIÇÃO:');
+                console.log(novaDesc);
+            });*/
         });
     </script>
 @stop

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RefeicaoRequest extends FormRequest
+class ClienteRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,13 @@ class RefeicaoRequest extends FormRequest
     public function rules()
     {
         return [
-            'nm_cardapio' => 'required',
-            'desc_cardapio' => 'required',
-            'vl_cardapio' => 'required',
-            'qt_cardapio' => 'required',
-            'fk_tipo_ref' => 'required',
-            'images.*' => 'required|image|mimes:jpeg,bmp,png'
+            "nm_cliente" => "required",
+            "sobrenome_cliente" => "required",
+            "email" => "required",
+            "password" => "required",
+            "dt_nasc_cliente" => "required",
+            "cpf_cliente" => "required",
+            "cel_cliente" => "required",
         ];
     }
 }

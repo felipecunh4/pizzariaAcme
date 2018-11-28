@@ -19,16 +19,16 @@
             <h4>Cadastrar Sobremesa</h4>
         </div>
         <div class="box-body">
-            <form method="post" action="{{route('save.sobremesa')}}"  enctype="multipart/form-data">
+            <form method="post" action="{{route('save.refeicao')}}"  enctype="multipart/form-data">
                 {{csrf_field()}}
-
+                <input hidden type="number" value="3" name="fk_tipo_ref">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="nm_sobremesa">Nome Sobremesa</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
-                                <input id="nm_sobremesa" type="text" class="form-control" name="nm_sobremesa" maxlength="20">
+                                <input id="nm_sobremesa" type="text" class="form-control" name="nm_cardapio" maxlength="20">
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             <label for="qt_sobremesa">Quantidade</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
-                                <input id="qt_sobremesa" type="text" class="form-control" name="qt_sobremesa">
+                                <input id="qt_sobremesa" type="text" class="form-control" name="qt_cardapio">
                             </div>
                         </div>
                     </div>
@@ -46,14 +46,14 @@
                             <label for="vl_sobremesa">Preço</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                                <input id="vl_sobremesa" type="text" class="form-control" name="vl_sobremesa">
+                                <input id="vl_sobremesa" type="text" class="form-control" name="vl_cardapio">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10">
                         <div class="form-group">
                             <label for="desc_sobremesa">Descrição</label>
-                            <textarea id="desc_sobremesa" class="form-control" name="desc_sobremesa" style="resize: none;" rows="5" maxlength="80"></textarea>
+                            <textarea id="desc_sobremesa" class="form-control" name="desc_cardapio" style="resize: none;" rows="5" maxlength="80"></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -96,22 +96,22 @@
                         <tbody>
                         @foreach($sobremesas as $sm)
                             <tr>
-                                <td>{{$sm->id_sobremesa}}</td>
+                                <td>{{$sm->id_cardapio}}</td>
                                 <td>
-                                    <img src="{{ URL::asset('img/sobremesas/' . $sm->img_sobremesa) }}"
-                                         alt="{{ $sm->nm_sobremesa}}" style="width: 150px; height: 120px;">
+                                    <img src="{{ URL::asset('img/pizzas/' . $sm->img_cardapio) }}"
+                                         alt="{{ $sm->nm_cardapio}}" style="width: 150px; height: 120px;">
                                 </td>
-                                <td>{{$sm->nm_sobremesa}}</td>
-                                <td>{{$sm->qt_sobremesa}}</td>
-                                <td>{{$sm->vl_sobremesa}}</td>
-                                <td hidden>{{$sm->desc_sobremesa}}</td>
+                                <td>{{$sm->nm_cardapio}}</td>
+                                <td>{{$sm->qt_cardapio}}</td>
+                                <td>{{$sm->vl_cardapio}}</td>
+                                <td hidden>{{$sm->desc_cardapio}}</td>
                                 <td class="pull-right">
                                     <button id="btn_editar" title="Editar Sobremesa"
                                             class="fa fa-pencil btn btn-outline-warning"
                                             data-toggle="modal" data-target="#modal-default" style="color: #367fa9">
                                     </button>
                                     <button id="btn_excluir"
-                                            value="{{$sm->id_sobremesa}}"
+                                            value="{{$sm->id_cardapio}}"
                                             title="Deletar Sobremesa"
                                             class="btn btn-outline-warning"
                                             style="color: #cc0000">
@@ -128,7 +128,7 @@
     </div>
 
     <!-- MODAL ATUALIZA BEBIDA -->
-    <form method="post" action="{{route('update.sobremesa')}}" enctype="multipart/form-data">
+    <form method="post" action="{{route('update.refeicao')}}" enctype="multipart/form-data">
 
         {{ csrf_field() }}
 
@@ -144,14 +144,14 @@
                         <div class="row">
 
                             <div class="col-md-12">
-
+                                <input hidden type="number" value="3" name="fk_tipo_ref">
                                 <div class="row">
                                     <div class="col-md-3" hidden>
                                         <div class="form-group">
                                             <label for="id_modal">Id Sobremesa:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                                                <input id="id_modal" type="number" class="form-control" name="id_sobremesa" readonly required>
+                                                <input id="id_modal" type="number" class="form-control" name="id_cardapio" readonly required>
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@
                                             <label for="nm_modal">Nome Sobremesa:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
-                                                <input id="nm_modal" type="text" class="form-control" name="nm_sobremesa" required maxlength="20">
+                                                <input id="nm_modal" type="text" class="form-control" name="nm_cardapio" required maxlength="20">
                                             </div>
                                         </div>
                                     </div>
@@ -171,7 +171,7 @@
                                             <label for="qt_modal">Quantidade:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                                                <input id="qt_modal" type="number" class="form-control" name="qt_sobremesa" required>
+                                                <input id="qt_modal" type="number" class="form-control" name="qt_cardapio" required>
                                             </div>
                                         </div>
                                     </div>
@@ -181,7 +181,7 @@
                                             <label for="vl_modal">Preço:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                                                <input id="vl_modal" type="text" class="form-control" name="vl_sobremesa" required>
+                                                <input id="vl_modal" type="text" class="form-control" name="vl_cardapio" required>
                                             </div>
                                         </div>
                                     </div>
@@ -189,7 +189,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="desc_modal">Descrição:</label>
-                                            <textarea id="desc_modal" class="form-control" name="desc_sobremesa" rows="5" style="resize: none;" maxlength="80"></textarea>
+                                            <textarea id="desc_modal" class="form-control" name="desc_cardapio" rows="5" style="resize: none;" maxlength="80"></textarea>
                                         </div>
                                     </div>
 
@@ -270,7 +270,7 @@
                         if(vaiApagar){
 
                             $.ajax({
-                                url: '{{url('delete/sobremesa/')}}/' + id_sobremesa,
+                                url: '{{url('delete/refeicao/')}}/' + id_sobremesa,
                                 type: 'post',
                                 data: {_token: token},
                                 success: function(data){

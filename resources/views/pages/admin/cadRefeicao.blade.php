@@ -21,14 +21,14 @@
         <div class="box-body">
             <form method="post" action="{{route('save.refeicao')}}"  enctype="multipart/form-data">
                 {{csrf_field()}}
-
+                <input hidden type="number" value="1" name="fk_tipo_ref">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="nm_refeicao">Nome Refeição</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
-                                <input id="nm_refeicao" type="text" class="form-control" name="nm_refeicao">
+                                <input id="nm_refeicao" type="text" class="form-control" name="nm_cardapio">
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             <label for="qt_refeicao">Quantidade</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
-                                <input id="qt_refeicao" type="text" class="form-control" name="qt_refeicao">
+                                <input id="qt_refeicao" type="text" class="form-control" name="qt_cardapio">
                             </div>
                         </div>
                     </div>
@@ -46,14 +46,14 @@
                             <label for="vl_refeicao">Preço</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                                <input id="vl_refeicao" type="text" class="form-control" name="vl_refeicao">
+                                <input id="vl_refeicao" type="text" class="form-control" name="vl_cardapio">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-10">
                         <div class="form-group">
                             <label for="desc_refeicao">Descrição</label>
-                            <textarea id="desc_refeicao" class="form-control" name="desc_refeicao" style="resize: none;" rows="5" maxlength="250"></textarea>
+                            <textarea id="desc_refeicao" class="form-control" name="desc_cardapio" style="resize: none;" rows="5" maxlength="250"></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -96,22 +96,22 @@
                         <tbody>
                             @foreach($refeicoes as $r)
                                 <tr>
-                                    <td>{{$r->id_refeicao}}</td>
+                                    <td>{{$r->id_cardapio}}</td>
                                     <td>
-                                        <img src="{{ URL::asset('img/pizzas/' . $r->img_refeicao) }}"
-                                             alt="{{ $r->nm_refeicao }}" style="width: 150px; height: 120px;">
+                                        <img src="{{ URL::asset('img/pizzas/' . $r->img_cardapio) }}"
+                                             alt="{{ $r->nm_cardapio}}" style="width: 150px; height: 120px;">
                                     </td>
-                                    <td>{{$r->nm_refeicao}}</td>
-                                    <td>{{$r->qt_refeicao}}</td>
-                                    <td>{{$r->vl_refeicao}}</td>
-                                    <td hidden>{{$r->desc_refeicao}}</td>
+                                    <td>{{$r->nm_cardapio}}</td>
+                                    <td>{{$r->qt_cardapio}}</td>
+                                    <td>{{$r->vl_cardapio}}</td>
+                                    <td hidden>{{$r->desc_cardapio}}</td>
                                     <td class="pull-right">
                                         <button id="btn_editar" title="Editar Refeição"
                                                 class="fa fa-pencil btn btn-outline-warning"
                                                 data-toggle="modal" data-target="#modal-default" style="color: #367fa9">
                                         </button>
                                         <button id="btn_excluir"
-                                                value="{{$r->id_refeicao}}"
+                                                value="{{$r->id_cardapio}}"
                                                 title="Deletar Refeição"
                                                 class="btn btn-outline-warning"
                                                 style="color: #cc0000">
@@ -144,14 +144,14 @@
                         <div class="row">
 
                             <div class="col-md-12">
-
+                                <input hidden type="number" value="1" name="fk_tipo_ref">
                                 <div class="row">
                                     <div class="col-md-3" hidden>
                                         <div class="form-group">
                                             <label for="id_modal">Id Refeição:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                                                <input id="id_modal" type="number" class="form-control" name="id_refeicao" readonly required>
+                                                <input id="id_modal" type="number" class="form-control" name="id_cardapio" readonly required>
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@
                                             <label for="nm_modal">Nome Refeição:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
-                                                <input id="nm_modal" type="text" class="form-control" name="nm_refeicao" required maxlength="45">
+                                                <input id="nm_modal" type="text" class="form-control" name="nm_cardapio" required maxlength="45">
                                             </div>
                                         </div>
                                     </div>
@@ -171,7 +171,7 @@
                                             <label for="qt_modal">Quantidade:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                                                <input id="qt_modal" type="number" class="form-control" name="qt_refeicao" required>
+                                                <input id="qt_modal" type="number" class="form-control" name="qt_cardapio" required>
                                             </div>
                                         </div>
                                     </div>
@@ -181,7 +181,7 @@
                                             <label for="vl_modal">Preço:</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
-                                                <input id="vl_modal" type="text" class="form-control" name="vl_refeicao" required>
+                                                <input id="vl_modal" type="text" class="form-control" name="vl_cardapio" required>
                                             </div>
                                         </div>
                                     </div>
@@ -189,7 +189,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="desc_modal">Descrição:</label>
-                                            <textarea id="desc_modal" class="form-control" name="desc_refeicao" rows="5" style="resize: none;" maxlength="250"></textarea>
+                                            <textarea id="desc_modal" class="form-control" name="desc_cardapio" rows="5" style="resize: none;" maxlength="250"></textarea>
                                         </div>
                                     </div>
 

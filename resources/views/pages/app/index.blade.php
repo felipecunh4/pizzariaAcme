@@ -201,7 +201,7 @@
             <div class="col-md-6 text-center">
 
                 <div class="abso-img">
-                    <a href="menu-tiles.html" class="btn btn-dark btn-xl">View Full Menu</a>
+                    <a href="{{route('index.produtos')}}" class="btn btn-dark btn-xl">View Full Menu</a>
                     <img src="{{asset('img/m1.jpg')}}" alt="" class="img-fluid">
                 </div>
             </div>

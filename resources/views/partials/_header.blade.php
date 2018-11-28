@@ -104,6 +104,7 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="{{route('index.produtos')}}">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('index.login.register')}}">Login</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
             <!--cart icon-->

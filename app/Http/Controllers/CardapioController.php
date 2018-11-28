@@ -9,18 +9,17 @@ use Illuminate\Http\Request;
 
 class CardapioController extends Controller
 {
-    //
-
     public function indexCardapio(){
-        $refeicao = Refeicao::all();
-        $bebidas = Bebida::all();
-        $sobremesas = Sobremesa::all();
+        $refeicao = Refeicao::join('tipo_refeicao', 'tipo_refeicao.id_tipo_refeicao', '=', 'cardapio.fk_tipo_ref')
+            ->get();
 
-        return view('pages.app.indexCardapio', compact('refeicao', 'bebidas', 'sobremesas'));
+        return view('pages.app.indexCardapio', compact('refeicao'));
     }
 
     public function indexProdutos(){
-        return view('pages.app.indexProdutos');
+        $refeicao = Refeicao::paginate(3);
+
+        return view('pages.app.indexProdutos', compact('refeicao'));
     }
 
     public function indexReserva(){
@@ -28,13 +27,12 @@ class CardapioController extends Controller
     }
 
     public function indexDetalhes($slug){
-
-        $item = Refeicao::where('slug_refeicao', '=', $slug)->get();
-
-        if(count($item) == 0){
-            $item = Bebida::where('slug_bebida', '=', $slug)->get();
-        }
+        $item = Refeicao::where('slug_cardapio', '=', $slug)->get();
 
         return view('pages.app.details', compact('item'));
+    }
+
+    public function indexLoginRegister(){
+        return view('pages.app.indexLoginRegister');
     }
 }

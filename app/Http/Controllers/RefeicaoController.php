@@ -10,9 +10,24 @@ use Image;
 class RefeicaoController extends Controller
 {
     public function indexRefeicao(){
-        $refeicoes = Refeicao::all();
+        $refeicoes = Refeicao::join('tipo_refeicao', 'tipo_refeicao.id_tipo_refeicao', '=', 'cardapio.fk_tipo_ref')
+            ->where('tipo_refeicao.id_tipo_refeicao', '=', 1)->get();
 
         return view('pages.admin.cadRefeicao', compact('refeicoes'));
+    }
+
+    public function indexSobremesa(){
+        $sobremesas = Refeicao::join('tipo_refeicao', 'tipo_refeicao.id_tipo_refeicao', '=', 'cardapio.fk_tipo_ref')
+                        ->where('tipo_refeicao.id_tipo_refeicao', '=', 3)->get();
+
+        return view('pages.admin.cadSobremesa', compact('sobremesas'));
+    }
+
+    public function indexBebida(){
+        $bebidas = Refeicao::join('tipo_refeicao', 'tipo_refeicao.id_tipo_refeicao', '=', 'cardapio.fk_tipo_ref')
+            ->where('tipo_refeicao.id_tipo_refeicao', '=', 2)->get();
+
+        return view('pages.admin.cadbebidas', compact('bebidas'));
     }
 
     //==================================================================================================================
@@ -23,19 +38,20 @@ class RefeicaoController extends Controller
         try{
             if($request->hasFile('images')){
 
-                $imageName = $this->createImage($request->images, $request->nm_refeicao);
+                $imageName = $this->createImage($request->images, $request->nm_cardapio);
 
-                $slugname = str_slug($request->nm_refeicao, '-');
+                $slugname = str_slug($request->nm_cardapio, '-');
 
-                $this->createRefeicao($request->nm_refeicao, $request->desc_refeicao, $request->vl_refeicao, $request->qt_refeicao, $imageName, $slugname);
+                $this->createRefeicao($request->nm_cardapio, $request->desc_cardapio, $request->vl_cardapio, $request->qt_cardapio, $imageName, $slugname, $request->fk_tipo_ref);
 
             }
         }
         catch (\Exception $e){
-            return redirect()->route('index.admin.refeicao')->with('nosuccess', 'Erro ao tentar salvar refeição.');
+            return redirect()->route('index.admin.refeicao')->with('nosuccess', 'Erro ao tentar salvar cardápio.');
+            //throw $e;
         }
 
-        return redirect()->route('index.admin.refeicao')->with('success', 'Refeição salva com sucesso.');
+        return redirect()->back()->with('success', 'Cardápio salvo com sucesso.');
     }
 
     public function createImage($imagem, $nm_ref){
@@ -63,15 +79,17 @@ class RefeicaoController extends Controller
 
     //==================================================================================================================
     //CRIA A REFEIÇÃO
-    public function createRefeicao($nome, $desc, $valor, $qtd, $img, $slug)
+    public function createRefeicao($nome, $desc, $valor, $qtd, $img, $slug, $fk)
     {
+        //dd($nome, $desc, $valor, $qtd, $img, $slug, $fk);
         return Refeicao::firstOrCreate([
-            'nm_refeicao' => $nome,
-            'desc_refeicao' => $desc,
-            'vl_refeicao' => str_replace(",", ".", $valor),
-            'qt_refeicao' => $qtd,
-            'img_refeicao' => $img,
-            'slug_refeicao' => $slug
+            'nm_cardapio' => $nome,
+            'desc_cardapio' => $desc,
+            'vl_cardapio' => str_replace(",", ".", $valor),
+            'qt_cardapio' => $qtd,
+            'img_cardapio' => $img,
+            'slug_cardapio' => $slug,
+            'fk_tipo_ref' => $fk
         ]);
     }
 
@@ -80,7 +98,7 @@ class RefeicaoController extends Controller
     public function deleteRefeicao($id){
         try{
             $ref = Refeicao::find($id);
-            $this->deleteImageFile($ref->img_refeicao);
+            $this->deleteImageFile($ref->img_cardapio);
             $ref->delete();
         }
         catch (\Exception $e){
@@ -106,25 +124,25 @@ class RefeicaoController extends Controller
         try{
             $ref = Refeicao::find($request->id_refeicao);
             //dd($ref);
-            $ref->nm_refeicao = $request->nm_refeicao;
-            $ref->qt_refeicao = $request->qt_refeicao;
-            $ref->vl_refeicao = str_replace(",", ".", $request->vl_refeicao);
-            $ref->desc_refeicao = $request->desc_refeicao;
-            $slugname = str_slug($request->nm_refeicao, '-');
-            $ref->slug_refeicao = $slugname;
+            $ref->nm_cardapio = $request->nm_cardapio;
+            $ref->qt_cardapio = $request->qt_cardapio;
+            $ref->vl_cardapio = str_replace(",", ".", $request->vl_cardapio);
+            $ref->desc_cardapio = $request->desc_cardapio;
+            $slugname = str_slug($request->nm_cardapio, '-');
+            $ref->slug_cardapio = $slugname;
 
             if($request->hasFile('images')){
-                $this->deleteImageFile($ref->img_refeicao);
-                $imageName = $this->createImage($request->images, $request->nm_refeicao);
-                $ref->img_refeicao = $imageName;
+                $this->deleteImageFile($ref->img_cardapio);
+                $imageName = $this->createImage($request->images, $request->nm_cardapio);
+                $ref->img_cardapio= $imageName;
             }
 
             $ref->save();
         }
         catch (\Exception $e){
-            return redirect()->back()->with('nosuccess', 'Erro ao tentar atualizar refeição.');
+            return redirect()->back()->with('nosuccess', 'Erro ao tentar atualizar cardápio.');
         }
 
-        return redirect()->back()->with('success', 'Refeição atualizada com sucesso.');
+        return redirect()->back()->with('success', 'Cardápio atualizado com sucesso.');
     }
 }
