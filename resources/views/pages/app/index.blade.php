@@ -15,7 +15,7 @@
     <!--static parallax end-->
 
 
-    <div class="space-70"></div>
+    {{--<div class="space-70"></div>
     <div class="overflow-hidden">
         <div class="container">
             <div class="row vertical-align-child">
@@ -51,13 +51,13 @@
                 </div>
             </div>
         </div>
-    </div><!--end call to action-->
+    </div><!--end call to action-->--}}
     <div class="space-70"></div>
 
     <div class="container">
         <div class="text-center">
-            <h1 class="title-1">Todays <span class="text-color ">Special</span></h1>
-            <h5 class="subtitle">menu of the day</h5>
+            <h1 class="title-1">Especiais <span class="text-color ">de Hoje</span></h1>
+            <h5 class="subtitle">Menu do Dia</h5>
             <div class="space-30"></div>
         </div>
         <div class="row vertical-align-child">
@@ -208,7 +208,7 @@
         </div>
     </div>
     <div class="space-70"></div>
-    <div class="about-chefs">
+    {{--<div class="about-chefs">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mr-auto ml-auto text-center">
@@ -287,17 +287,17 @@
                 </div>
             </div>
         </div>
-    </div><!--testimonials end-->
+    </div><!--testimonials end-->--}}
 
     <div class="cta-background-2">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 ml-auto mr-auto text-center">
-                    <h1 class="text-uppercase">Book a table now</h1>
+                    <h1 class="text-uppercase">Reserve uma mesa agora</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                        Localize e reserve uma mesa e receba uma confirmação imediata da sua reserva!
                     </p>
-                    <a href="#" class="btn btn-white btn-rounded">Make a reservation</a>
+                    <a href="{{route('index.reserva')}}" class="btn btn-white btn-rounded">Faça a reserva</a>
                 </div>
             </div>
         </div>
@@ -317,7 +317,7 @@
                 <div class="col-md-4 margin-b-30">
                     <i class="ion-email"></i>
                     <div class="overflow-hidden">
-                        <h4>Reservation</h4>
+                        <h4>Reservas</h4>
                         <p class="lead">
                             +01 123-456-4590
                         </p>
@@ -326,7 +326,7 @@
                 <div class="col-md-4 margin-b-30">
                     <i class="ion-map"></i>
                     <div class="overflow-hidden">
-                        <h4>Location</h4>
+                        <h4>Localização</h4>
                         <p class="lead">
                             124, Lorem Street, NY
                         </p>

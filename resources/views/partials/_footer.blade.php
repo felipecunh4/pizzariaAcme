@@ -2,18 +2,18 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 margin-b-30">
-                <img class="margin-b-20" src="assets/images/logo-light.png" alt="">
+                <img class="margin-b-20" src="{{asset('img/logo-light.png')}}" alt="">
                 <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    Somos um restaurante novo bla bla bla
                 </p>
-                <h5><a href="#">Read More...</a></h5>
+                <h5><a href="#">Ler Mais...</a></h5>
             </div>
-            <div class="col-lg-3 col-md-6 margin-b-30">
+            {{--<div class="col-lg-3 col-md-6 margin-b-30">
                 <h3>Recent Posts</h3>
                 <ul class="list-unstyled recent-post">
                     <li class="clearfix">
                         <a href="#">
-                            <img src="assets/images/a1.jpg" alt="" width="70">
+                            <img src="{{asset('img/a1.jpg')}}" alt="" width="70">
                         </a>
                         <div class="post-content">
                             <h5><a href="#">Pizza cordoin lorem ipsum dolor sit amet</a></h5>
@@ -22,7 +22,7 @@
                     </li>
                     <li class="clearfix">
                         <a href="#">
-                            <img src="assets/images/a2.jpg" alt="" width="70">
+                            <img src="{{asset('img/a1.jpg')}}" alt="" width="70">
                         </a>
                         <div class="post-content">
                             <h5><a href="#">Cordoin lorem ipsum dolor sit amet</a></h5>
@@ -30,16 +30,16 @@
                         </div>
                     </li>
                 </ul>
+            </div>--}}
+            <div class="col-lg-3 col-md-6 margin-b-30">
+                <h3>Horários</h3>
+                <p><span class="text-color">Segunda : </span>Fechado</p>
+                <p><span class="text-color">Ter-Quar :</span> 9hrs - 22hrs</p>
+                <p><span class="text-color">Quin-Sex :</span> 9hrs - 22hrs</p>
+                <p><span class="text-color">Sáb-Dom :</span> 17hrs - 22hrs</p>
             </div>
             <div class="col-lg-3 col-md-6 margin-b-30">
-                <h3>Opening hours</h3>
-                <p><span class="text-color">Monday: </span>Closed</p>
-                <p><span class="text-color">Tue-Wed :</span> 9:Am - 10PM</p>
-                <p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
-                <p><span class="text-color">Sat-Sun :</span> 5:PM - 10PM</p>
-            </div>
-            <div class="col-lg-3 col-md-6 margin-b-30">
-                <h3>Contact Us</h3>
+                <h3>Contato</h3>
                 <p class="lead">
                     Ipsum Street, Lorem Tower, MO, Columbia, 302012
                 </p>
@@ -57,7 +57,7 @@
                     <li class="list-inline-item"><a href="#"><i class="ion-social-googleplus"></i></a></li>
                     <li class="list-inline-item"><a href="#"><i class="ion-social-instagram"></i></a></li>
                 </ul>
-                <span>&copy; Copyright 2017. Resto</span>
+                <span>&copy; Copyright 2018. MagazineTech</span>
             </div>
         </div>
     </div>

@@ -50,29 +50,8 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
-                    <li class="dropdown nav-item">
-                        <a href="#" class="dropdown-toggle nav-link active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a class="dropdown-item" href="index.html">V1 - Default slider</a></li>
-                            <li><a class="dropdown-item" href="index-video.html">V2 - Video background</a></li>
-                            <li><a class="dropdown-item" href="index-parallax-static.html">V3 - parallax Static</a></li>
-                            <li><a class="dropdown-item" href="index-left-canvas.html">V4 - Offcanvas Left</a></li>
-                            <li><a class="dropdown-item" href="index-right-canvas.html">V5 - Offcanvas Right</a></li>
-                            <li><a class="dropdown-item" href="index-boxed.html">V6 - Boxed version</a></li>
-                            <li><a class="dropdown-item" href="one-page.html">V7 - One Page</a></li>
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item" tabindex="-1" href="#">Menu Levels </a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-submenu">
-                                        <a class="dropdown-item" tabindex="-1" href="#">menu level 2 </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"> menu level 3</a></li>
-                                            <li><a class="dropdown-item" href="#"> menu level 3</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <li class="nav-item">
+                        <a href="{{route('index')}}" class="nav-link">Home</a>
                     </li>
 
                     <li class="nav-item">
