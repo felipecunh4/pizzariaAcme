@@ -50,38 +50,9 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="{{route('index')}}" class="nav-link">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="{{route('index.cardapio')}}" class="nav-link">Cardápio</a>
-                    </li>
-                    <li class="dropdown nav-item">
-                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a class="dropdown-item" href="blog-rightsidebar.html">Right sidebar</a></li>
-                            <li><a class="dropdown-item" href="blog-leftsidebar.html">Left sidebar</a></li>
-                            <li><a class="dropdown-item" href="blog-masonry.html">Masonry</a></li>
-                            <li><a class="dropdown-item" href="blog-fullwidth.html">Full width</a></li>
-                            <li><a class="dropdown-item" href="blog-post.html">Single Page</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a href="{{route('index')}}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{{route('index.cardapio')}}" class="nav-link">Cardápio</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('index.reserva')}}">Reservas</a></li>
-                    <li class="dropdown nav-item">
-                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a class="dropdown-item" href="about.html">About</a></li>
-                            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
-                            <li><a class="dropdown-item" href="contact.html">Contact us</a></li>
-                            <li><a class="dropdown-item" href="login-register.html">Login Register</a></li>
-                            <li><a class="dropdown-item" href="page-full-width.html">Page Full Width</a></li>
-                            <li><a class="dropdown-item" href="error-404.html">Error 404</a></li>
-                            <li><a class="dropdown-item" href="page-left-sidebar.html">Page left sidebar</a></li>
-                            <li><a class="dropdown-item" href="typography.html">Typography</a></li>
-                            <li><a class="dropdown-item" href="elements.html">Eelements</a></li>
-                        </ul>
-                    </li>
                     <li class="nav-item"><a class="nav-link" href="{{route('index.produtos')}}">Produtos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('index.login.register')}}">Login</a></li>
                 </ul>

@@ -56,8 +56,8 @@
 
     <div class="container">
         <div class="text-center">
-            <h1 class="title-1">Ofertas <span class="text-color ">de Hoje</span></h1>
-            <h5 class="subtitle">Ofertas do Dia</h5>
+            <h1 class="title-1">Ofertas <span class="text-color ">do Dia</span></h1>
+            <h5 class="subtitle">Ofertas</h5>
             <div class="space-30"></div>
         </div>
         <div class="row vertical-align-child">
@@ -240,7 +240,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 margin-b-30">
-                    <i class="ion-email"></i>
+                    <i class="ion-ios-telephone"></i>
                     <div class="overflow-hidden">
                         <h4>Reservas</h4>
                         <p class="lead">

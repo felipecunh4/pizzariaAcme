@@ -21,7 +21,7 @@ class CardapioController extends Controller
     public function indexProdutos(){
         $refeicao = Refeicao::leftJoin('ofertas', 'ofertas.fk_id_cardapio', '=', 'cardapio.id_cardapio')
                     ->orderBy('cardapio.id_cardapio')
-                    ->paginate(3);
+                    ->paginate(6);
 
         return view('pages.app.indexProdutos', compact('refeicao'));
     }
