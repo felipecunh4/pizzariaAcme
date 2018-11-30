@@ -15,7 +15,7 @@ Route::get('/', 'ProdutosController@indexApp')->name('index');
 Route::get('/register', 'CardapioController@indexLoginRegister')->name('index.login.register');
 Route::get('/cardapio', 'CardapioController@indexCardapio')->name('index.cardapio');
 Route::get('/produtos', 'CardapioController@indexProdutos')->name('index.produtos');
-Route::get('/reservas', 'CardapioController@indexReserva')->name('index.reserva');
+Route::get('/cadastrar/reservas', 'CardapioController@indexReserva')->name('index.reserva');
 Route::get('/detalhes/{slug}', 'CardapioController@indexDetalhes')->name('index.detalhes');
 
 //=====================================================================================================================
@@ -37,3 +37,8 @@ Route::get('/ofertas', 'OfertaController@indexOferta')->name('index.oferta');
 Route::post('/save/ofertas/', 'OfertaController@saveOferta')->name('save.oferta');
 Route::post('/delete/ofertas/{id}', 'OfertaController@deleteOferta')->name('delete.oferta');
 Route::get('/ofertas/search/{id}', 'OfertaController@buscaRefeicao')->name('search.refeicao');
+
+//=====================================================================================================================
+//OFERTAS
+Route::get('/reservas', 'ReservaController@painelReserva')->name('painel.reserva');
+Route::post('/save/reservas', 'ReservaController@saveReserva')->name('save.reserva');

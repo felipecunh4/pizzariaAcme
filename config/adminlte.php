@@ -167,7 +167,7 @@ return [
         ],
         [
             'text'    => 'Reservas',
-            'url'     => '#',
+            'url'     => '/reservas',
             'icon'    => 'calendar',
         ],
         [
