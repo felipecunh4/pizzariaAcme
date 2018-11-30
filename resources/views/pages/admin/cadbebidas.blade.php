@@ -70,7 +70,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i>&nbsp;&nbsp;Salvar</button>
-                        {{--<button id="btn_teste" type="button" class="btn btn-danger pull-left">Teste</button>--}}
+                        <!-- <button id="btn_teste" type="button" class="btn btn-danger pull-left">Teste</button> -->
                     </div>
                 </div>
             </form>
@@ -297,8 +297,9 @@
                     });
             });
 
-            /*$('#btn_teste').click(function(){
-                let desc = "Um exeplo de um texto <p> com </p> tags <strong>HTML</strong> <span style='font-size='12''>.</span>";
+            /* $('#btn_teste').click(function(){
+                //let desc = "Um exeplo de um texto <p> com </p> tags <strong>HTML</strong> <span style='font-size='12''>.</span>";
+                let desc = "Blush Ruby Rose HB6106-B04 Contém 1 unidade. Experimente o novo Blush da Ruby Rose! Seu tamanho é essencial para carregar e suas cores deixam suas maçãs do rosto perfeitas! Com alta pigmentação, o Blush Cor 4 Bronze Soft da Ruby Rose possui componentes que proporcionam alta fixação na pele, sua textura é fina e aveludada, com ótima durabilidade. Com ele, o rosto fica corado e harmônico! Aplicação: Após a preparação da pele com Base, Corretivo e Pó, utilize um pincel específico para blush e aplique nas maças do rosto. Espalhe o produto até que adquira a naturalidade desejada. <p style='padding: 0px; margin: 0px 0px 10px; border: none; box-sizing: border-box; color: #666666; font-family: Lato, sans-serif; font-size: medium;'> ";
                 console.log(desc);
 
                 let novaDesc = "";
@@ -319,7 +320,7 @@
 
                 console.log('NOVA DESCRIÇÃO:');
                 console.log(novaDesc);
-            });*/
+            }); */
         });
     </script>
 @stop

@@ -15,7 +15,10 @@ class CardapioController extends Controller
             ->orderBy('cardapio.id_cardapio')
             ->get();
 
-        return view('pages.app.indexCardapio', compact('refeicao'));
+        $data = date('Y-m-d');
+        $dia_semana = date('w', strtotime($data));
+
+        return view('pages.app.indexCardapio', compact('refeicao', 'dia_semana'));
     }
 
     public function indexProdutos(){
@@ -23,7 +26,10 @@ class CardapioController extends Controller
                     ->orderBy('cardapio.id_cardapio')
                     ->paginate(6);
 
-        return view('pages.app.indexProdutos', compact('refeicao'));
+        $data = date('Y-m-d');
+        $dia_semana = date('w', strtotime($data));
+
+        return view('pages.app.indexProdutos', compact('refeicao', 'dia_semana'));
     }
 
     public function indexReserva(){

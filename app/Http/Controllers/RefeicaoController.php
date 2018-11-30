@@ -122,7 +122,7 @@ class RefeicaoController extends Controller
     public function atualizaRefeicao(Request $request){
         //dd($request->all());
         try{
-            $ref = Refeicao::find($request->id_refeicao);
+            $ref = Refeicao::find($request->id_cardapio);
             //dd($ref);
             $ref->nm_cardapio = $request->nm_cardapio;
             $ref->qt_cardapio = $request->qt_cardapio;

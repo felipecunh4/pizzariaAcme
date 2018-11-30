@@ -18,7 +18,7 @@
                             <img src="{{asset('img/pizzas/' . $r->img_cardapio)}}" alt="{{$r->nm_cardapio}}" class="img-fluid">
                             <a href="{{route('index.detalhes', $r->slug_cardapio)}}" class="item-link"></a>
                             <div class="product-item-tools">
-                                <a href="#" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wishlist">
+                                <a href="#" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Lista de Desejos">
                                     <i class="ion-ios-heart"></i>
                                 </a>
                                 <a href="#" class="btn btn-primary">
@@ -28,10 +28,10 @@
                         </div>
                         <div class="product-detail">
                             <h4><a href="#">{{$r->nm_cardapio}}</a></h4>
-                            @if($r->vl_oferta == null)
-                                <span>R$ {{$r->vl_cardapio}}</span>
-                            @else
+                            @if($r->fk_id_dia == ($dia_semana + 1))
                                 <span>R$ {{$r->vl_oferta}}</span>
+                            @else
+                                <span>R$ {{$r->vl_cardapio}}</span>
                             @endif
                         </div>
                     </div><!--product box end-->
