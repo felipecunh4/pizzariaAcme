@@ -25,9 +25,14 @@ class ReservaController extends Controller
             $telFormatado = str_replace('-', '', $telFormatado);
             $telFormatado = str_replace(' ', '', $telFormatado);
 
+            $data = substr($request->dia_reserva, 6,4) .
+                "-" . substr($request->dia_reserva, 3,2) .
+                "-" . substr($request->dia_reserva, 0,2);
+
             Reservas::create([
                 'nm_cliente' => $request->nm_cliente,
-                'dia_reserva' => date_create($request->dia_reserva)->format('Y-m-d'),
+                //'dia_reserva' => date_create($data)->format('Y-m-d'),
+                'dia_reserva' => $data,
                 'email' => $request->email,
                 'qtd_pessoas' => $request->qtd_pessoas,
                 'tel_contato' => $telFormatado,
