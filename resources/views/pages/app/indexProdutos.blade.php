@@ -2,6 +2,26 @@
 
 @section('content')
 
+    <style>
+        .tamanhoimg {
+
+            width: 350px;
+            height: 255px;
+            background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+            -o-background-size: 100% 100%;
+            -khtml-background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+        }
+
+        .box span {
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+        }
+    </style>
+
     <div class="page-breadcrumb">
         <div class="container text-center">
             <h1>Nossos Produtos</h1>
@@ -15,7 +35,7 @@
                 <div class="col-md-4 margin-b-30">
                     <div class="product-box">
                         <div class="product-thumb">
-                            <img src="{{asset('img/pizzas/' . $r->img_cardapio)}}" alt="{{$r->nm_cardapio}}" class="img-fluid">
+                            <img src="{{asset('img/pizzas/' . $r->img_cardapio)}}" alt="{{$r->nm_cardapio}}" class="tamanhoimg img-fluid">
                             <a href="{{route('index.detalhes', $r->slug_cardapio)}}" class="item-link"></a>
                             <div class="product-item-tools">
                                 <a href="#" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Lista de Desejos">

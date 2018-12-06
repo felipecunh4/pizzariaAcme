@@ -2,6 +2,26 @@
 
 @section('content')
 
+    <style>
+        .tamanhoimg {
+
+            width: 350px;
+            height: 255px;
+            background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+            -o-background-size: 100% 100%;
+            -khtml-background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+        }
+
+        .box span {
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+        }
+    </style>
+
     <div class="page-breadcrumb">
         <div class="container text-center">
             <h1>Cardápio</h1>
@@ -30,7 +50,7 @@
                     <div class=" sobremesas col-md-4 margin-b-30 menu-item">
                 @endif
                     <a href="{{route('index.detalhes', $r->slug_cardapio)}}" class="menu-grid">
-                        <img src="{{asset('img/pizzas/' . $r->img_cardapio)}}" alt="{{$r->nm_cardapio}}" class="img-fluid">
+                        <img src="{{asset('img/pizzas/' . $r->img_cardapio)}}" alt="{{$r->nm_cardapio}}" class="tamanhoimg img-fluid">
                         <div class="menu-grid-desc">
                             @if($r->fk_id_dia == ($dia_semana + 1))
                                 <span class="price float-right">R$ {{$r->vl_oferta}}</span>
